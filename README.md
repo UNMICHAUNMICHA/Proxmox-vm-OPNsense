@@ -36,29 +36,10 @@ Proxmox host:
 
 สร้าง Bridges:
 
-Bridge
-
-ใช้กับ
-
-IP บน Proxmox
-
-vmbr0
-
-WAN
-
-192.168.0.66
-
-vmbr1
-
-LAN10
-
-ไม่มี IP
-
-vmbr2
-
-LAN20
-
-ไม่มี IP
+Bridge ใช้กับ IP บน Proxmox
+vmbr0    WAN      192.168.0.66
+vmbr1    LAN10    ไม่มี IP
+vmbr2    LAN20    ไม่มี IP
 
 **สำคัญ**  
 บน vmbr1 และ vmbr2 **ไม่ต้องตั้ง IP** เช่น:
@@ -84,29 +65,10 @@ LAN20
 
 ตั้ง IP แบบนี้:
 
-Interface
-
-IP
-
-Role
-
-WAN
-
-DHCP หรือ Static 192.168.0.50
-
-internet in
-
-LAN1
-
-192.168.10.1/24
-
-network 10
-
-LAN2
-
-192.168.20.1/24
-
-network 20
+Interface    IP    Role
+WAN    DHCP หรือ Static 192.168.0.50    internet in
+LAN1    192.168.10.1/24    network 10
+LAN2    192.168.20.1/24    network 20
 
 ----------
 
