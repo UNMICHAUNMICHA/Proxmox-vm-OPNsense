@@ -26,8 +26,12 @@ PC (WAN)		192.168.0.62/24		ต่อ WAN network
 1.  สร้างหรือแก้ไฟล์ `/etc/rc.local`
     
 
-`#!/bin/sh -e  # Add static routes ip route add 192.168.10.0/24 via 192.168.0.50
-ip route add 172.30.0.0/16 via 192.168.0.50 exit 0` 
+`#!/bin/sh -e  
+# Add static routes 
+ip route add 192.168.10.0/24 via 192.168.0.50
+ip route add 172.30.0.0/16 via 192.168.0.50 
+
+exit 0` 
 
 2.  ทำให้รันได้:
     
