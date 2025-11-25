@@ -46,7 +46,23 @@ ping 172.30.105.114`
 ✅ หลัง reboot route จะอยู่ถาวร
 
 > **ทางเลือก:** ถ้าใช้ Proxmox LXC hookscript ก็สามารถเพิ่ม route ตอน start container ได้
+ใน OPNsense ถ้า WAN Rule มี Reply-to เปิดอยู่ (มักตั้งเป็น “reply-to WAN gateway”) เวลา packet เข้ามา firewall จะบังคับให้ตอบกลับไปยัง gateway ที่ระบุ ทำให้ ICMP ping กลับไม่ถูกต้องหรือถูก drop
 
+✅ วิธีแก้:
+
+ไปที่ Firewall → Rules → WAN
+
+เลือก Rule ที่อนุญาต ICMP / Ping
+
+แก้ไข และ ติ๊กออก Reply-to (ปล่อยว่าง)
+
+บันทึก & Apply
+
+ทดสอบ ping อีกครั้งจาก WAN → LAN
+
+หลังจากนี้ ping จะผ่านทันที เพราะ packet จะเดินทางตาม routing table ปกติ ไม่ถูกบังคับไป gateway เดิม
+
+https://www.reddit.com/r/OPNsenseFirewall/comments/15o6doq/pinging_from_wan_interface/
 ----------
 
 # 2️⃣ PC ฝั่ง WAN (192.168.0.62)
