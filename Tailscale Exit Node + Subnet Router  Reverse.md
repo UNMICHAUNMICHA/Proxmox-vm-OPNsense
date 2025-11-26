@@ -57,3 +57,4 @@ ping 100.85.22.107      → ตอบ
 ping 192.168.50.20      → ตอบ
 ssh root@100.85.22.107  → เข้าได้เลย
 ```
+https://www.reddit.com/r/OPNsenseFirewall/comments/10nmew6/opnsense_and_tailscale_vpc/
